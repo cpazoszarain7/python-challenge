@@ -31,3 +31,25 @@ results = Counter(votes)
 
 #Get key of max value in the 'results' dictionary
 winner = max(results,key=results.get)
+
+#Assemble the string for the text report
+text = ("Election Results\n" +
+  "-------------------------\n" +
+  f"Total Votes: {T_votes}\n" +
+  f"-------------------------\n" +
+  f"Khan: {results.get('Khan')/T_votes*100:.2f}% ({results.get('Khan')})\n" +
+  f"Correy: {results.get('Correy')/T_votes*100:.2f}% ({results.get('Correy')})\n" +
+  f"Li: {results.get('Li')/T_votes*100:.2f}% ({results.get('Li')})\n" +
+  f"O'Tooley: {results.get('''O'Tooley''')/T_votes*100:.2f}% ({results.get('''O'Tooley''')})\n" +
+  "-------------------------\n" +
+  f"Winner: {winner}\n" +
+  "-------------------------")
+print(text)
+
+#Defnie relative path to store text file
+txtpath = os.path.join('Analysis','PyPollReport.txt')
+
+#Write string to text file
+report = open(txtpath, "w")
+report.write(text)
+report.close()
