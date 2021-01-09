@@ -45,3 +45,11 @@ text = ("Election Results\n" +
   f"Winner: {winner}\n" +
   "-------------------------")
 print(text)
+
+#Defnie relative path to store text file
+txtpath = os.path.join('Analysis','PyPollReport.txt')
+
+#Write string to text file
+report = open(txtpath, "w")
+report.write(text)
+report.close()
