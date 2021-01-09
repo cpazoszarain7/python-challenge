@@ -22,3 +22,12 @@ with open(csvpath) as csvfile:
         
 #Remove headers of list
 votes.remove('Candidate')
+
+#Calculate Total Number of votes
+T_votes = len(votes)
+
+#Count unique occurrences in the votes list
+results = Counter(votes)
+
+#Get key of max value in the 'results' dictionary
+winner = max(results,key=results.get)
