@@ -52,12 +52,12 @@ min_value = min(Change)
 min_date = Date[Change.index(min_value)+1]
 
 #Build analysis string to save on text file
-text = ("Financial Analysis\n"
-"----------------------------\n"
-f"Total Months: {T_Months}\n"
-f"Total: ${T_Profit_Loss}\n"
-f"Average  Change: ${Avg_Change:.2f}\n"
-f"Greatest Increase in Profits: {max_date} (${max_value})\n"
+text = ("Financial Analysis\n" +
+"----------------------------\n" +
+f"Total Months: {T_Months}\n" +
+f"Total: ${T_Profit_Loss}\n" +
+f"Average  Change: ${Avg_Change:.2f}\n" +
+f"Greatest Increase in Profits: {max_date} (${max_value})\n" +
 f"Greatest Decrease in Profits: {min_date} (${min_value})")
 print(text)
 
